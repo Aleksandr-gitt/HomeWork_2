@@ -26,6 +26,7 @@ public class Task_1 {
             char ch = (char) c;
             sb.append(ch);   // получили sb = {"name":"Ivanov", "country":"Russia", "city":"Moscow", "age":"null"}
         }
+        fr.close();
          
         String str = sb.toString();
         str = str.replace("{"," ");      //  "name":"Ivanov", "country":"Russia", "city":"Moscow", "age":"null"}
