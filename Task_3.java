@@ -15,6 +15,7 @@ import java.io.FileReader;
 
 public class Task_3 {
     public static void main(String[] args) throws Exception {
+        
         StringBuilder sb = new StringBuilder();
         FileReader fr = new FileReader("HomeWork_2//test2.txt");
         int c;
@@ -23,23 +24,36 @@ public class Task_3 {
             sb.append(ch);
         }
         fr.close();
-        
-        //System.out.println(sb);
         String str = sb.toString();
+
+        ChangeJsonfor3students(str);
+
+
+    }
+    
+    public static void ChangeJsonfor3students(String str) {
+        
         str = str.replace("{","");
         str = str.replace("}",""); 
         str = str.replace("[","");
         str = str.replace("]",""); 
         str = str.replace(","," ");
-        //System.out.println(str);
-        
+                
         String abc[] = str.split(" ");
         StringBuilder sb2 = new StringBuilder();
         
         for (String el : abc){
             sb2.append(el+" ");
-            System.out.println(el);
-        }
+        }    
+
+        String str2 = sb2.toString();
+        str2 = str2.replace(":"," ");
+        str2 = str2.replace("\"","");
+        String abc2[] = str2.split(" ");
         
+        System.out.printf("Студент %s получил %s по предмету %s.\n",abc2[1],abc2[3],abc2[5]);
+        System.out.printf("Студент %s получил %s по предмету %s.\n",abc2[7],abc2[9],abc2[11]);
+        System.out.printf("Студент %s получил %s по предмету %s.\n",abc2[13],abc2[15],abc2[17]);
     }
+    
 }
