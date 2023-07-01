@@ -1,5 +1,5 @@
 /**
- * 3) Дана json-строка (можно сохранить в файл и читать из файла)
+Дана json-строка (можно сохранить в файл и читать из файла)
 [{"фамилия":"Иванов","оценка":"5","предмет":"Математика"},{"фамилия":"Петрова","оценка":"4","предмет":"Информатика"},
 {"фамилия":"Краснов","оценка":"5","предмет":"Физика"}]
 Написать метод(ы), который распарсит json и, используя StringBuilder, создаст строки вида: 
@@ -26,18 +26,19 @@ public class Task_3 {
         
         //System.out.println(sb);
         String str = sb.toString();
-        // str = str.replace("{","");
-        // str = str.replace("}"," "); 
-        // str = str.replace("[","");
-        // str = str.replace("]",""); 
-        System.out.println(str);
+        str = str.replace("{","");
+        str = str.replace("}",""); 
+        str = str.replace("[","");
+        str = str.replace("]",""); 
+        str = str.replace(","," ");
+        //System.out.println(str);
         
-        String abc[] = str.split(",");
+        String abc[] = str.split(" ");
         StringBuilder sb2 = new StringBuilder();
         
         for (String el : abc){
             sb2.append(el+" ");
-            System.out.print(el);
+            System.out.println(el);
         }
         
     }
