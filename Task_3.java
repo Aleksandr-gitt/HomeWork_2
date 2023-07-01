@@ -11,8 +11,34 @@
  */
 package HomeWork_2;
 
+import java.io.FileReader;
+
 public class Task_3 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
+        StringBuilder sb = new StringBuilder();
+        FileReader fr = new FileReader("HomeWork_2//test2.txt");
+        int c;
+        while ((c = fr.read()) != -1) {
+            char ch = (char) c;
+            sb.append(ch);
+        }
+        fr.close();
+        
+        //System.out.println(sb);
+        String str = sb.toString();
+        // str = str.replace("{","");
+        // str = str.replace("}"," "); 
+        // str = str.replace("[","");
+        // str = str.replace("]",""); 
+        System.out.println(str);
+        
+        String abc[] = str.split(",");
+        StringBuilder sb2 = new StringBuilder();
+        
+        for (String el : abc){
+            sb2.append(el+" ");
+            System.out.print(el);
+        }
         
     }
 }
